@@ -1,4 +1,4 @@
-package com.hdb.attendance.configuration;
+package com.hdb.attendance.application.configuration;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,24 +17,25 @@ public class ApplicationConfig {
     private Api api = new Api();
     private Wifi wifi = new Wifi();
     private Device device = new Device();
+    private User user = new User();
 
     @Getter
     @Setter
-    public class Status {
+    public static class Status {
         private String checkInFlag;
         private String checkOutFlag;
     }
 
     @Getter
     @Setter
-    public class Company {
+    public static class Company {
         private String name;
         private String language;
     }
 
     @Getter
     @Setter
-    public class Attendance {
+    public static class Attendance {
         private String enabled;
         private String cronCheckIn;
         private String cronCheckOut;
@@ -45,7 +46,7 @@ public class ApplicationConfig {
 
     @Getter
     @Setter
-    public class Api {
+    public static class Api {
         private String baseUrl;
         private String timeKeepingEndpoint;
         private String stoken;
@@ -53,7 +54,7 @@ public class ApplicationConfig {
 
     @Getter
     @Setter
-    public class Wifi {
+    public static class Wifi {
         private String name;
         private String password;
         private String ip;
@@ -61,10 +62,19 @@ public class ApplicationConfig {
 
     @Getter
     @Setter
-    public class Device {
-        private String deviceId;
+    public static class Device {
+        private String id;
         private String mac;
         private String os;
+        private String name;
+        private String token;
+    }
+
+    @Getter
+    @Setter
+    public static class User {
+        private String name;
+        private String password;
     }
 
 
